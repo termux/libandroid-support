@@ -1,6 +1,5 @@
 #include <locale.h>
 #include <langinfo.h>
-#include "libc.h"
 
 static const char c_time[] =
 	"Sun\0" "Mon\0" "Tue\0" "Wed\0" "Thu\0" "Fri\0" "Sat\0"
@@ -64,6 +63,3 @@ char *nl_langinfo(nl_item item)
 {
 	return nl_langinfo_l(item, 0);
 }
-
-weak_alias(__nl_langinfo, nl_langinfo);
-weak_alias(__nl_langinfo_l, nl_langinfo_l);
