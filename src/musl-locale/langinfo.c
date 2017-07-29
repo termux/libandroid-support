@@ -24,6 +24,21 @@ static const char c_time[] =
 static const char c_messages[] = "^[yY]\0" "^[nN]";
 static const char c_numeric[] = ".\0" "";
 
+static const char c_zero[] = "UTF-8\0" "UTF-8\0"
+	"%F %T %z\0" "%F\0" "%T\0" "%I:%M:%S %p\0"
+	"AM\0" "PM\0"
+	"Sunday\0" "Monday\0" "Tuesday\0" "Wednesday\0"
+	"Thursday\0" "Friday\0"	"Saturday\0"
+	"Sun\0"	"Mon\0"	"Tue\0"	"Wed\0"	"Thu\0"	"Fri\0"	"Sat\0"
+	"January\0" "February\0" "March\0"
+	"April\0" "May\0" "June\0"
+	"July\0" "August\0" "September\0"
+	"October\0" "November\0" "December\0"
+	"Jan\0"	"Feb\0"	"Mar\0"	"Apr\0"	"May\0"	"Jun\0"
+	"Jul\0"	"Aug\0"	"Sep\0"	"Oct\0"	"Nov\0"	"Dec\0"
+	"\0" "\0" "\0" "\0" "\0" ".\0" "\0"
+	"^[yY]\0" "^[nN]\0" "\0";
+
 // Android: this was __nl_langinfo_l in musl.
 char *nl_langinfo_l(nl_item item, locale_t loc)
 {
@@ -34,6 +49,10 @@ char *nl_langinfo_l(nl_item item, locale_t loc)
 	if (item == CODESET) return "UTF-8";
 	
 	switch (cat) {
+	case 0:
+		if (idx > 55) return NULL;
+		str = c_zero;
+		break;
 	case LC_NUMERIC:
 		if (idx > 1) return NULL;
 		str = c_numeric;
