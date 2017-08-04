@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2013 The Android Open Source Project
+ * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -39,75 +40,62 @@
 #define _NL_ITEM_CATEGORY(nl)  ((nl) >> 10)
 #define _NL_ITEM_INDEX(nl)     ((nl) & 0x3ff)
 
-#define CODESET _NL_ITEM(LC_CTYPE, 0)
-
-/* Abbreviated days of the week */
-#define ABDAY_1 _NL_ITEM(LC_TIME,1)
-#define ABDAY_2 _NL_ITEM(LC_TIME,2)
-#define ABDAY_3 _NL_ITEM(LC_TIME,3)
-#define ABDAY_4 _NL_ITEM(LC_TIME,4)
-#define ABDAY_5 _NL_ITEM(LC_TIME,5)
-#define ABDAY_6 _NL_ITEM(LC_TIME,6)
-#define ABDAY_7 _NL_ITEM(LC_TIME,7)
-
-/* Long names of the week */
-#define DAY_1   _NL_ITEM(LC_TIME,11)
-#define DAY_2   _NL_ITEM(LC_TIME,12)
-#define DAY_3   _NL_ITEM(LC_TIME,13)
-#define DAY_4   _NL_ITEM(LC_TIME,14)
-#define DAY_5   _NL_ITEM(LC_TIME,15)
-#define DAY_6   _NL_ITEM(LC_TIME,16)
-#define DAY_7   _NL_ITEM(LC_TIME,17)
-
-/* Abbreviated month names */
-#define ABMON_1  _NL_ITEM(LC_TIME,21)
-#define ABMON_2  _NL_ITEM(LC_TIME,22)
-#define ABMON_3  _NL_ITEM(LC_TIME,23)
-#define ABMON_4  _NL_ITEM(LC_TIME,24)
-#define ABMON_5  _NL_ITEM(LC_TIME,25)
-#define ABMON_6  _NL_ITEM(LC_TIME,26)
-#define ABMON_7  _NL_ITEM(LC_TIME,27)
-#define ABMON_8  _NL_ITEM(LC_TIME,28)
-#define ABMON_9  _NL_ITEM(LC_TIME,29)
-#define ABMON_10 _NL_ITEM(LC_TIME,30)
-#define ABMON_11 _NL_ITEM(LC_TIME,31)
-#define ABMON_12 _NL_ITEM(LC_TIME,32)
-
-/* Long month names */
-#define MON_1    _NL_ITEM(LC_TIME,41)
-#define MON_2    _NL_ITEM(LC_TIME,42)
-#define MON_3    _NL_ITEM(LC_TIME,43)
-#define MON_4    _NL_ITEM(LC_TIME,44)
-#define MON_5    _NL_ITEM(LC_TIME,45)
-#define MON_6    _NL_ITEM(LC_TIME,46)
-#define MON_7    _NL_ITEM(LC_TIME,47)
-#define MON_8    _NL_ITEM(LC_TIME,48)
-#define MON_9    _NL_ITEM(LC_TIME,49)
-#define MON_10   _NL_ITEM(LC_TIME,50)
-#define MON_11   _NL_ITEM(LC_TIME,51)
-#define MON_12   _NL_ITEM(LC_TIME,52)
-
-#define AM_STR      _NL_ITEM(LC_TIME,53)
-#define PM_STR      _NL_ITEM(LC_TIME,54)
-#define D_T_FMT     _NL_ITEM(LC_TIME,55)
-#define D_FMT       _NL_ITEM(LC_TIME,56)
-#define T_FMT       _NL_ITEM(LC_TIME,57)
-#define T_FMT_AMPM  _NL_ITEM(LC_TIME,58)
-#define ERA         _NL_ITEM(LC_TIME,59)
-#define ERA_D_FMT   _NL_ITEM(LC_TIME,60)
-#define ERA_D_T_FMT _NL_ITEM(LC_TIME,61)
-#define ERA_T_FMT   _NL_ITEM(LC_TIME,62)
-#define ALT_DIGITS  _NL_ITEM(LC_TIME,70)
-
-#define INT_CURRENCY_SYMBOL     _NL_ITEM(LC_MONETARY,0)
-#define CURRENCY_SYMBOL         _NL_ITEM(LC_MONETARY,1)
-#define MON_DECIMAL_POINT       _NL_ITEM(LC_MONETARY,2)
-#define MON_THOUSANDS_SEP       _NL_ITEM(LC_MONETARY,3)
-#define MON_GROUPING            _NL_ITEM(LC_MONETARY,4)
-#define POSITIVE_SIGN           _NL_ITEM(LC_MONETARY,5)
-#define NEGATIVE_SIGN           _NL_ITEM(LC_MONETARY,6)
-#define INT_FRAC_DIGITS         _NL_ITEM(LC_MONETARY,7)
-#define FRAC_DIGITS             _NL_ITEM(LC_MONETARY,8)
+#define CODESET 1
+#define D_T_FMT 2
+#define D_FMT 3
+#define T_FMT 4
+#define T_FMT_AMPM 5
+#define AM_STR 6
+#define PM_STR 7
+#define DAY_1 8
+#define DAY_2 9
+#define DAY_3 10
+#define DAY_4 11
+#define DAY_5 12
+#define DAY_6 13
+#define DAY_7 14
+#define ABDAY_1 15
+#define ABDAY_2 16
+#define ABDAY_3 17
+#define ABDAY_4 18
+#define ABDAY_5 19
+#define ABDAY_6 20
+#define ABDAY_7 21
+#define MON_1 22
+#define MON_2 23
+#define MON_3 24
+#define MON_4 25
+#define MON_5 26
+#define MON_6 27
+#define MON_7 28
+#define MON_8 29
+#define MON_9 30
+#define MON_10 31
+#define MON_11 32
+#define MON_12 33
+#define ABMON_1 34
+#define ABMON_2 35
+#define ABMON_3 36
+#define ABMON_4 37
+#define ABMON_5 38
+#define ABMON_6 39
+#define ABMON_7 40
+#define ABMON_8 41
+#define ABMON_9 42
+#define ABMON_10 43
+#define ABMON_11 44
+#define ABMON_12 45
+#define ERA 46
+#define ERA_D_FMT 47
+#define ERA_D_T_FMT 48
+#define ERA_T_FMT 49
+#define ALT_DIGITS 50
+#define RADIXCHAR 51
+#define THOUSEP 52
+#define YESEXPR 53
+#define NOEXPR 54
+#define CRNCYSTR 55
+#define INT_CURRENCY_SYMBOL 55
 
 #ifdef __cplusplus
 extern "C" {
